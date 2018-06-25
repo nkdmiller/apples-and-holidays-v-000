@@ -49,11 +49,11 @@ def all_winter_holiday_supplies(holiday_hash)
   holiday_hash.each do |season|
     if season == :winter
       season.each do |holiday, supplies|
-        winter_supplies_hash << holiday.values
+        winter_supplies_array << holiday.values
       end
     end
   end
-  return winter_supplies_hash
+  return winter_supplies_array
 end
 
 def all_supplies_in_holidays(holiday_hash)
