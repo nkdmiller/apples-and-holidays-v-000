@@ -70,6 +70,11 @@ def all_supplies_in_holidays(holiday_hash)
     holidays.each do |holiday, supplies|
       if "#{holiday}".include?("_")
         holiday_str = "#{holiday}".tr("_", " ")
+        holiday_str.split!
+        holiday_str.each do |word|
+          word.capitalize!
+        end
+        holiday_str.join!
         puts "  #{holiday_str}: #{supplies.join(", ")}"
       else
         puts "  #{holiday.capitalize}: #{supplies.join(", ")}"
